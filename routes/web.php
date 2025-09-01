@@ -81,5 +81,13 @@ Route::group(['middleware' => ['auth']], function () {
     Route::get('/spcarts', [App\Http\Controllers\SpcartController::class, 'index'])->name('spcarts')->middleware('permission:add_spcarts');
 });
 
+Route::prefix('/api')->name('api.')->group(function () {
+    Route::get('/stat_site/{start}/{end}', [App\Http\Controllers\StatController::class, 'stat_site'])
+        ->name('stat_site');
+    Route::get('/stat_site2/{start}/{end}', [App\Http\Controllers\StatController::class, 'stat_site2'])
+        ->name('stat_site2');
+});
+
+
 
 
