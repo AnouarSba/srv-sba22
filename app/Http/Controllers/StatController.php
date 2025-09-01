@@ -368,9 +368,7 @@ class StatController extends Controller
         $period = CarbonPeriod::create($from, $to);
         foreach ($period as $date) {
             $day = $date->format('Y-m-d');
-            $et[] = [
-                $etRaw[$day] ?? 0
-            ];
+            $et[] = [(int) ($etRaw[$day] ?? 0)];
         }
         // $from = Carbon::parse($start)->startOfDay();
         // $to   = Carbon::parse($end)->endOfDay();
