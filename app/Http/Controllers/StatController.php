@@ -424,6 +424,7 @@ class StatController extends Controller
             $i++;
         }
         // return response()->json($elect_ticket);
+        // return response()->json($elect_ticket);
         return response()->json([$et, $elect_ticket]);
     }
 }
